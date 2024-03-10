@@ -176,7 +176,7 @@ namespace JWSong
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = "Visor " + Application.ProductVersion;
+            this.Text = "Visor " + Application.ProductVersion + " (GIT)";
 
             //ChecaResolucao();
 
