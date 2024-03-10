@@ -88,6 +88,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBaixo = new System.Windows.Forms.Button();
+            this.btnCima = new System.Windows.Forms.Button();
+            this.btnDir = new System.Windows.Forms.Button();
+            this.btnEsq = new System.Windows.Forms.Button();
             this.btnZoomOut = new System.Windows.Forms.Button();
             this.btnZoomIn = new System.Windows.Forms.Button();
             this.chkFade = new System.Windows.Forms.CheckBox();
@@ -114,10 +118,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblVol = new System.Windows.Forms.Label();
             this.lblMidia = new System.Windows.Forms.Label();
-            this.btnEsq = new System.Windows.Forms.Button();
-            this.btnDir = new System.Windows.Forms.Button();
-            this.btnCima = new System.Windows.Forms.Button();
-            this.btnBaixo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -175,11 +175,11 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(789, 621);
+            this.tabPage1.Size = new System.Drawing.Size(789, 614);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cânticos";
             // 
@@ -201,30 +201,30 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip2.Location = new System.Drawing.Point(4, 595);
+            this.statusStrip2.Location = new System.Drawing.Point(4, 578);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip2.Size = new System.Drawing.Size(781, 22);
+            this.statusStrip2.Size = new System.Drawing.Size(781, 32);
             this.statusStrip2.TabIndex = 72;
             this.statusStrip2.Text = "statusStrip2";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(179, 25);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(127, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(194, 25);
             this.toolStripStatusLabel3.Text = "toolStripStatusLabel3";
             // 
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(179, 25);
             this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
             // 
             // lsvVideo
@@ -261,7 +261,7 @@
             this.chkZoom.Location = new System.Drawing.Point(189, 144);
             this.chkZoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkZoom.Name = "chkZoom";
-            this.chkZoom.Size = new System.Drawing.Size(89, 17);
+            this.chkZoom.Size = new System.Drawing.Size(131, 24);
             this.chkZoom.TabIndex = 70;
             this.chkZoom.Text = "Zoom On/Off";
             this.chkZoom.UseVisualStyleBackColor = false;
@@ -287,7 +287,7 @@
             this.lblSt.Location = new System.Drawing.Point(52, 69);
             this.lblSt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSt.Name = "lblSt";
-            this.lblSt.Size = new System.Drawing.Size(26, 20);
+            this.lblSt.Size = new System.Drawing.Size(39, 30);
             this.lblSt.TabIndex = 65;
             this.lblSt.Text = "-";
             // 
@@ -300,7 +300,7 @@
             this.chkVideo.Location = new System.Drawing.Point(57, 138);
             this.chkVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkVideo.Name = "chkVideo";
-            this.chkVideo.Size = new System.Drawing.Size(59, 24);
+            this.chkVideo.Size = new System.Drawing.Size(85, 30);
             this.chkVideo.TabIndex = 64;
             this.chkVideo.Text = "Vídeo";
             this.chkVideo.UseVisualStyleBackColor = true;
@@ -366,7 +366,7 @@
             this.label1.Location = new System.Drawing.Point(16, 293);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 18);
+            this.label1.Size = new System.Drawing.Size(121, 29);
             this.label1.TabIndex = 58;
             this.label1.Text = "1º Cântico";
             // 
@@ -377,7 +377,7 @@
             this.lblPlay.Location = new System.Drawing.Point(355, 128);
             this.lblPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlay.Name = "lblPlay";
-            this.lblPlay.Size = new System.Drawing.Size(26, 24);
+            this.lblPlay.Size = new System.Drawing.Size(39, 32);
             this.lblPlay.TabIndex = 56;
             this.lblPlay.Text = "-1";
             this.lblPlay.Visible = false;
@@ -461,7 +461,7 @@
             this.label3.Location = new System.Drawing.Point(12, 418);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 18);
+            this.label3.Size = new System.Drawing.Size(121, 29);
             this.label3.TabIndex = 49;
             this.label3.Text = "3º Cântico";
             // 
@@ -472,7 +472,7 @@
             this.label2.Location = new System.Drawing.Point(16, 356);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 18);
+            this.label2.Size = new System.Drawing.Size(121, 29);
             this.label2.TabIndex = 48;
             this.label2.Text = "2º Cântico";
             // 
@@ -764,7 +764,7 @@
             this.label4.Location = new System.Drawing.Point(108, 7);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.Size = new System.Drawing.Size(80, 28);
             this.label4.TabIndex = 35;
             this.label4.Text = "Posição";
             this.label4.UseCompatibleTextRendering = true;
@@ -804,7 +804,7 @@
             this.label8.Location = new System.Drawing.Point(280, 7);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 16);
+            this.label8.Size = new System.Drawing.Size(59, 23);
             this.label8.TabIndex = 29;
             this.label8.Text = "Título";
             // 
@@ -817,7 +817,7 @@
             this.label7.Location = new System.Drawing.Point(196, 7);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
+            this.label7.Size = new System.Drawing.Size(76, 23);
             this.label7.TabIndex = 28;
             this.label7.Text = "Cântico";
             // 
@@ -849,15 +849,55 @@
             this.tabPage2.Controls.Add(this.btTocar);
             this.tabPage2.Controls.Add(this.axwmpPreview);
             this.tabPage2.Controls.Add(this.lsvArquivos);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(789, 621);
+            this.tabPage2.Size = new System.Drawing.Size(789, 614);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mídias";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnBaixo
+            // 
+            this.btnBaixo.Location = new System.Drawing.Point(336, 511);
+            this.btnBaixo.Name = "btnBaixo";
+            this.btnBaixo.Size = new System.Drawing.Size(32, 29);
+            this.btnBaixo.TabIndex = 82;
+            this.btnBaixo.Text = "v";
+            this.btnBaixo.UseVisualStyleBackColor = true;
+            this.btnBaixo.Click += new System.EventHandler(this.btnBaixo_Click);
+            // 
+            // btnCima
+            // 
+            this.btnCima.Location = new System.Drawing.Point(336, 466);
+            this.btnCima.Name = "btnCima";
+            this.btnCima.Size = new System.Drawing.Size(32, 29);
+            this.btnCima.TabIndex = 81;
+            this.btnCima.Text = "^";
+            this.btnCima.UseVisualStyleBackColor = true;
+            this.btnCima.Click += new System.EventHandler(this.btnCima_Click);
+            // 
+            // btnDir
+            // 
+            this.btnDir.Location = new System.Drawing.Point(374, 493);
+            this.btnDir.Name = "btnDir";
+            this.btnDir.Size = new System.Drawing.Size(32, 29);
+            this.btnDir.TabIndex = 80;
+            this.btnDir.Text = ">";
+            this.btnDir.UseVisualStyleBackColor = true;
+            this.btnDir.Click += new System.EventHandler(this.btnDir_Click);
+            // 
+            // btnEsq
+            // 
+            this.btnEsq.Location = new System.Drawing.Point(298, 493);
+            this.btnEsq.Name = "btnEsq";
+            this.btnEsq.Size = new System.Drawing.Size(32, 29);
+            this.btnEsq.TabIndex = 79;
+            this.btnEsq.Text = "<";
+            this.btnEsq.UseVisualStyleBackColor = true;
+            this.btnEsq.Click += new System.EventHandler(this.btnEsq_Click);
             // 
             // btnZoomOut
             // 
@@ -889,7 +929,7 @@
             this.chkFade.Location = new System.Drawing.Point(12, 430);
             this.chkFade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkFade.Name = "chkFade";
-            this.chkFade.Size = new System.Drawing.Size(84, 17);
+            this.chkFade.Size = new System.Drawing.Size(122, 24);
             this.chkFade.TabIndex = 76;
             this.chkFade.Text = "Fade In/Out";
             this.chkFade.UseVisualStyleBackColor = false;
@@ -902,24 +942,24 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tssMidia});
-            this.statusStrip1.Location = new System.Drawing.Point(4, 595);
+            this.statusStrip1.Location = new System.Drawing.Point(4, 578);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(781, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(781, 32);
             this.statusStrip1.TabIndex = 75;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(105, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(157, 25);
             this.toolStripStatusLabel1.Text = "Mídia selecionada:";
             // 
             // tssMidia
             // 
             this.tssMidia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tssMidia.Name = "tssMidia";
-            this.tssMidia.Size = new System.Drawing.Size(0, 17);
+            this.tssMidia.Size = new System.Drawing.Size(0, 25);
             // 
             // panel4
             // 
@@ -941,7 +981,7 @@
             this.lblTTotal.Location = new System.Drawing.Point(121, 38);
             this.lblTTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTTotal.Name = "lblTTotal";
-            this.lblTTotal.Size = new System.Drawing.Size(57, 16);
+            this.lblTTotal.Size = new System.Drawing.Size(88, 23);
             this.lblTTotal.TabIndex = 73;
             this.lblTTotal.Text = "00:00:00";
             this.lblTTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -955,7 +995,7 @@
             this.lblStatusVideo.Location = new System.Drawing.Point(9, 15);
             this.lblStatusVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatusVideo.Name = "lblStatusVideo";
-            this.lblStatusVideo.Size = new System.Drawing.Size(29, 23);
+            this.lblStatusVideo.Size = new System.Drawing.Size(44, 33);
             this.lblStatusVideo.TabIndex = 75;
             this.lblStatusVideo.Text = "-";
             // 
@@ -967,7 +1007,7 @@
             this.lblTCorrente.Location = new System.Drawing.Point(41, 0);
             this.lblTCorrente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTCorrente.Name = "lblTCorrente";
-            this.lblTCorrente.Size = new System.Drawing.Size(127, 33);
+            this.lblTCorrente.Size = new System.Drawing.Size(190, 51);
             this.lblTCorrente.TabIndex = 74;
             this.lblTCorrente.Text = "00:00:00";
             this.lblTCorrente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -988,7 +1028,7 @@
             this.label5.Location = new System.Drawing.Point(412, 4);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.Size = new System.Drawing.Size(155, 20);
             this.label5.TabIndex = 70;
             this.label5.Text = "Arquivo selecionado:";
             this.label5.Visible = false;
@@ -1122,7 +1162,7 @@
             this.label6.Location = new System.Drawing.Point(577, 12);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 72;
             this.label6.Text = "Volume";
             // 
@@ -1135,7 +1175,7 @@
             this.lblVol.Location = new System.Drawing.Point(635, 12);
             this.lblVol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVol.Name = "lblVol";
-            this.lblVol.Size = new System.Drawing.Size(21, 13);
+            this.lblVol.Size = new System.Drawing.Size(29, 20);
             this.lblVol.TabIndex = 74;
             this.lblVol.Text = "30";
             // 
@@ -1148,46 +1188,6 @@
             this.lblMidia.Size = new System.Drawing.Size(148, 30);
             this.lblMidia.TabIndex = 69;
             this.lblMidia.Visible = false;
-            // 
-            // btnEsq
-            // 
-            this.btnEsq.Location = new System.Drawing.Point(298, 493);
-            this.btnEsq.Name = "btnEsq";
-            this.btnEsq.Size = new System.Drawing.Size(32, 29);
-            this.btnEsq.TabIndex = 79;
-            this.btnEsq.Text = "<";
-            this.btnEsq.UseVisualStyleBackColor = true;
-            this.btnEsq.Click += new System.EventHandler(this.btnEsq_Click);
-            // 
-            // btnDir
-            // 
-            this.btnDir.Location = new System.Drawing.Point(374, 493);
-            this.btnDir.Name = "btnDir";
-            this.btnDir.Size = new System.Drawing.Size(32, 29);
-            this.btnDir.TabIndex = 80;
-            this.btnDir.Text = ">";
-            this.btnDir.UseVisualStyleBackColor = true;
-            this.btnDir.Click += new System.EventHandler(this.btnDir_Click);
-            // 
-            // btnCima
-            // 
-            this.btnCima.Location = new System.Drawing.Point(336, 466);
-            this.btnCima.Name = "btnCima";
-            this.btnCima.Size = new System.Drawing.Size(32, 29);
-            this.btnCima.TabIndex = 81;
-            this.btnCima.Text = "^";
-            this.btnCima.UseVisualStyleBackColor = true;
-            this.btnCima.Click += new System.EventHandler(this.btnCima_Click);
-            // 
-            // btnBaixo
-            // 
-            this.btnBaixo.Location = new System.Drawing.Point(336, 511);
-            this.btnBaixo.Name = "btnBaixo";
-            this.btnBaixo.Size = new System.Drawing.Size(32, 29);
-            this.btnBaixo.TabIndex = 82;
-            this.btnBaixo.Text = "v";
-            this.btnBaixo.UseVisualStyleBackColor = true;
-            this.btnBaixo.Click += new System.EventHandler(this.btnBaixo_Click);
             // 
             // Form1
             // 
@@ -1208,7 +1208,7 @@
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Visor";
+            this.Text = "Visor (GIT)";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
