@@ -178,7 +178,7 @@ namespace JWSong
         {
             this.Text = "Visor " + Application.ProductVersion + " (GIT)";
 
-            //ChecaResolucao();
+            //ChecaResolucao(); estou vendo seus arquivos agora kkk
 
             trackBar1.Value = Convert.ToInt32(lblVol.Text);            
 
