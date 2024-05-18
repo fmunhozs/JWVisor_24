@@ -1481,7 +1481,7 @@ namespace JWSong
             dlg.Refresh();
         }
 
-        int _pos = 200;
+        int _pos = 200; // atualização
 
         private void btnBaixo_Click(object sender, EventArgs e)
         {
