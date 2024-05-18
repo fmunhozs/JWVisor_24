@@ -185,6 +185,14 @@
     <Content Include="1462149576_music.ico" />
     <None Include="Resources\Tatice-Cristal-Intense-Ok.ico" />
     <None Include="Resources\Alarm-Warning-icon.png" />
+    <None Include="Resources\circulo-de-flecha.png" />
+    <None Include="Resources\circulo-de-flecha %281%29.png" />
+    <None Include="Resources\circulo-de-flecha %281%291.png" />
+    <None Include="Resources\circulo-de-flecha %281%292.png" />
+    <None Include="Resources\mais-zoom.png" />
+    <None Include="Resources\mais-zoom %281%29.png" />
+    <None Include="Resources\mais-zoom %281%291.png" />
+    <None Include="Resources\reduzir-o-zoom.png" />
     <Content Include="Visor 9_B.ico" />
     <Content Include="Visor_10.ico" />
   </ItemGroup>

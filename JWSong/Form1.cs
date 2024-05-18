@@ -49,7 +49,7 @@ namespace JWSong
             TreeNode rootNode;
 
             // DIRETÓRIO PRINCIPAL
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\Wilson\Videos\JWLibrary");
+            DirectoryInfo info = new DirectoryInfo(@"C:\JWMidias");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -895,7 +895,7 @@ namespace JWSong
             Rectangle bounds = screens[iTela].Bounds;
             dlg = new JWSongs.Form2();
 
-            dlg.SetBounds(bounds.Width, 0, bounds.Width, bounds.Height);
+            dlg.SetBounds(screens[0].Bounds.Width, 0, bounds.Width, bounds.Height);
 
             dlg.pictureBox1.Width = bounds.Width;
             dlg.pictureBox1.Height = bounds.Height;
@@ -963,8 +963,6 @@ namespace JWSong
         }
         private void TocarVideo()
         {
-            //ChecaResolucao();
-
             _ABA = tabControl1.SelectedTab.Text;
 
             if (dlg == null) { return; }
@@ -986,21 +984,6 @@ namespace JWSong
                 lblTCorrente.Text = "00:00:00";
                 lblTTotal.Text = "00:00:00";
 
-                double fade_out = 1;
-
-                if (chkFade.Checked)
-                {
-                    do
-                    {
-                        dlg.Opacity = fade_out;
-                        dlg.Refresh();
-
-                        System.Threading.Thread.Sleep(20);
-
-                        fade_out -= 0.1;
-                    }
-                    while (fade_out > 0);
-                }
 
                 btTocar.ImageIndex = 0;
                 lblStatusVideo.Text = "1";
@@ -1021,39 +1004,24 @@ namespace JWSong
                     dOriginalW = bmpOrig.Width;
 
                     dZoom = 1;
+                    dOriginalW = 0;
 
                     dlg.pictureBox1.Size = bmpOrig.Size;
 
                     dlg.pictureBox1.Top = (dlg.Height / 2) - (bmpOrig.Height / 2);
                     dlg.pictureBox1.Left = (dlg.Width / 2) - (bmpOrig.Width / 2);
 
+
                     dlg.Show();
 
                     dlg.Refresh();
 
-                    if (chkZoom.Checked) { AbrirZoom(1); } 
+                    SegundaTela();
                 }
                 catch (Exception)
                 {
                     lblStatusVideo.Text = "-";
                     MessageBox.Show("Falha ao abrir arquivo.", "JW Visor", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                if (chkFade.Checked)
-                {
-                    double i = 0.0;
-
-                    while (i < 1)
-                    {
-                        i += 0.1;
-
-                        dlg.Opacity = i;
-                        System.Threading.Thread.Sleep(100);
-                    }
-                }
-                else
-                {
-                    dlg.Opacity = 1;
                 }
             }
             else
@@ -1090,24 +1058,19 @@ namespace JWSong
                             {
                                 if (chkZoom.Checked) { AbrirZoom(1); }
 
-                                TelaSecundaria();
-
+                    
                                 dlg.axWindowsMediaPlayer1.Ctlcontrols.play();
                                 return;
                             }
 
                             if (lblStatusVideo.Text == "2")
                             {
-                                TelaSecundaria();
                                 
                                 dlg.axWindowsMediaPlayer1.Ctlcontrols.play();
                                 return;
                             }
                         }
                     }
-
-                    TelaSecundaria();
-
                 }
                 else if (btTocar.ImageIndex == 1) // PAUSAR
                 {
@@ -1126,7 +1089,6 @@ namespace JWSong
                         dlg = null;
                     }
                 }
-
             }
         }
 
@@ -1487,7 +1449,7 @@ namespace JWSong
                 dOriginalH = dlg.pictureBox1.Height;
             }
 
-            dZoom += 0.2;
+            dZoom += 0.5;
             dlg.pictureBox1.Width = Convert.ToInt16(dOriginalW * dZoom);
             dlg.pictureBox1.Height = Convert.ToInt16(dOriginalH * dZoom);
 
@@ -1504,7 +1466,7 @@ namespace JWSong
                 dOriginalH = dlg.pictureBox1.Height;
             }
 
-            dZoom -= 0.2;
+            dZoom -= 0.5;
             dlg.pictureBox1.Width = Convert.ToInt16(dOriginalW * dZoom);
             dlg.pictureBox1.Height = Convert.ToInt16(dOriginalH * dZoom);
 
@@ -1515,15 +1477,17 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Top -= 50;
+            dlg.pictureBox1.Top -= _pos;
             dlg.Refresh();
         }
+
+        int _pos = 200;
 
         private void btnBaixo_Click(object sender, EventArgs e)
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Top += 50;
+            dlg.pictureBox1.Top += _pos;
             dlg.Refresh();
 
             // upload para git 01
@@ -1533,7 +1497,7 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Left -= 50;
+            dlg.pictureBox1.Left -= _pos;
             dlg.Refresh();
         }
 
@@ -1541,7 +1505,7 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Left += 50;
+            dlg.pictureBox1.Left += _pos;
             dlg.Refresh();
         }
 
