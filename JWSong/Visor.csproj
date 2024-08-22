@@ -76,14 +76,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.WMPLib">
-      <HintPath>..\..\..\DF Front\Splash2015\Splash2015\bin\Debug\AxInterop.WMPLib.dll</HintPath>
+      <HintPath>dependencies\AxInterop.WMPLib.dll</HintPath>
     </Reference>
     <Reference Include="Id3, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\FELIPE\Desktop\ID3-0.3\Id3.dll</HintPath>
+      <HintPath>dependencies\Id3.dll</HintPath>
     </Reference>
     <Reference Include="Id3.Files">
-      <HintPath>C:\Users\FELIPE\Desktop\ID3-0.3\Id3.Files.dll</HintPath>
+      <HintPath>dependencies\Id3.Files.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
