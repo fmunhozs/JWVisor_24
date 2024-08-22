@@ -1008,7 +1008,8 @@ namespace JWSong
 
                     dlg.pictureBox1.Size = bmpOrig.Size;
 
-                    dlg.pictureBox1.Top = (dlg.Height / 2) - (bmpOrig.Height / 2);
+                    dlg.pictureBox1.Top = (dlg.Height / 2) - (bmpOrig.Height / 2); // teste
+
                     dlg.pictureBox1.Left = (dlg.Width / 2) - (bmpOrig.Width / 2);
 
 
