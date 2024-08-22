@@ -1003,8 +1003,8 @@ namespace JWSong
                     dOriginalH = bmpOrig.Height;
                     dOriginalW = bmpOrig.Width;
 
-                    dZoom = 1;
-                    dOriginalW = 0;
+                    trbZoom.Value = 100;
+                    lblZoom.Text = trbZoom.Value + "%";
 
                     dlg.pictureBox1.Size = bmpOrig.Size;
 
@@ -1477,7 +1477,7 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Top -= _pos;
+            dlg.pictureBox1.Top += _pos;
             dlg.Refresh();
         }
 
@@ -1487,7 +1487,7 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Top += _pos;
+            dlg.pictureBox1.Top -= _pos;
             dlg.Refresh();
 
             // upload para git 01
@@ -1497,7 +1497,7 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Left -= _pos;
+            dlg.pictureBox1.Left += _pos;
             dlg.Refresh();
         }
 
@@ -1505,7 +1505,21 @@ namespace JWSong
         {
             if (dlg == null) { return; }
 
-            dlg.pictureBox1.Left += _pos;
+            dlg.pictureBox1.Left -= _pos;
+            dlg.Refresh();
+        }
+
+        private void trbZoom_Scroll(object sender, EventArgs e)
+        {
+            if (dlg == null) { return; }
+          
+            dZoom = Convert.ToDouble(trbZoom.Value) / 100.0;
+
+            dlg.pictureBox1.Width = Convert.ToInt16(dOriginalW * dZoom);
+            dlg.pictureBox1.Height = Convert.ToInt16(dOriginalH * dZoom);
+
+            lblZoom.Text = trbZoom.Value + "%";
+
             dlg.Refresh();
         }
 
