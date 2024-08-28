@@ -520,8 +520,6 @@ namespace JWSong
 
                         dlg.Opacity = 1;
 
-                        // if (chkZoom.Checked) { AbrirZoom(1); }
-
                         dlg.pictureBox1.Visible = false;
                         dlg.axWindowsMediaPlayer1.Visible = true;
 
@@ -574,8 +572,6 @@ namespace JWSong
 
                 dlg.Hide();
 
-                if (chkZoom.Checked) { AbrirZoom(0); }
-
                 lblSt.Text = "3";
 
                 if (lblPlay.Text == "1")
@@ -602,8 +598,6 @@ namespace JWSong
 
                 dlg.Hide();
 
-                if (chkZoom.Checked) { AbrirZoom(0); }
-
                 lblSt.Text = "3";
 
                 if (lblPlay.Text == "2")
@@ -629,8 +623,6 @@ namespace JWSong
                 dlg.axWindowsMediaPlayer1.Ctlcontrols.stop();
 
                 dlg.Hide();
-
-                if (chkZoom.Checked) { AbrirZoom(0); }
 
                 lblSt.Text = "3";
 
@@ -1071,29 +1063,27 @@ namespace JWSong
 
                     timer1.Start();
 
-                    dlg.Opacity = 1;
 
                     if (lblNomeArq.Text != "")
                     {
                         dlg.pictureBox1.Visible = false;
                         dlg.axWindowsMediaPlayer1.Visible = true;
+                        dlg.Opacity = 1;
+                        dlg.Show();
+                        
                         dlg.Refresh();
 
                         if (dlg.axWindowsMediaPlayer1.URL != lblNomeArq.Text)
                         {
                             dlg.axWindowsMediaPlayer1.URL = lblNomeArq.Text;
-                            if (chkZoom.Checked) { AbrirZoom(1); }
-
+                        
                             _PRVW = "1";
                             lblStatusVideo.Text = _PRVW;
                         }
                         else
                         {
                             if ((lblStatusVideo.Text == "-") || (lblStatusVideo.Text == "3") || (lblStatusVideo.Text == "z"))
-                            {
-                                if (chkZoom.Checked) { AbrirZoom(1); }
-
-                    
+                            {                    
                                 dlg.axWindowsMediaPlayer1.Ctlcontrols.play();
                                 return;
                             }
@@ -1217,8 +1207,6 @@ namespace JWSong
                     btParar.Enabled = true;
 
                     Estado = null;
-
-                    if (chkZoom.Checked) { AbrirZoom(0); }
                 }
             }
 
@@ -1242,8 +1230,6 @@ namespace JWSong
 
                     btTocar.Enabled = true;
                     btParar.Enabled = true;
-
-                    if (chkZoom.Checked) { AbrirZoom(0); }
                 }
 
                 if (_PRVW == "1")
@@ -1567,35 +1553,6 @@ namespace JWSong
             lblZoom.Refresh();
 
             dlg.Refresh();
-        }
-
-        private void 
-            AbrirZoom(int Estado)
-        {
-            if (Estado == 0) 
-            {
-                ProcessoZoom("S");
-                bZoomAtivo = false;
-            } 
-            else 
-            {
-                if (!bZoomAtivo)
-                {
-                    ProcessoZoom("E");
-                    bZoomAtivo = true;
-                }
-            }
-        }
-
-        private void ProcessoZoom(string Estado)
-        {
-            ProcessStartInfo pInfo = new ProcessStartInfo();
-
-            pInfo.FileName = Application.StartupPath + @"\ZOOM_" + Estado + ".exe";
-
-            Process p = Process.Start(pInfo);
-
-            p.WaitForExit();
         }
     }
 }
