@@ -140,45 +140,49 @@ namespace JWSong
 
             if (screens.Length > 1)
             {
-                iTela = 1;
+                iTela = 0;
 
                 bounds = screens[iTela].Bounds;
-                dlg.SetBounds(screens[0].Bounds.Width, 0, bounds.Width, bounds.Height);
+                // dlg.SetBounds(screens[0].Bounds.Width, 0, bounds.Width, bounds.Height);
             }
             else
             {
                 iTela = 0;
                 bounds = screens[iTela].Bounds;
 
-                dlg.SetBounds(0, 0, bounds.Width, bounds.Height);
+                // dlg.SetBounds(0, 0, bounds.Width, bounds.Height);
             }
+
+            dlg.SetBounds(screens[0].Bounds.X, 0, screens[0].Bounds.Width, screens[0].Bounds.Height);
 
             dlg.pictureBox1.Width = bounds.Width;
             dlg.pictureBox1.Height = bounds.Height;
 
 
 
-
             toolStripStatusLabel2.Text = "Resolução da tela " + (iTela + 1).ToString() + ":"; 
-            toolStripStatusLabel3.Text = bounds.Width.ToString() + "x" + bounds.Height.ToString();
+            toolStripStatusLabel3.Text = screens[iTela].Bounds.Width.ToString() + "x" + bounds.Height.ToString();
 
-            if ((bounds.Width == 1280) && (bounds.Height == 720))
-            {
-                toolStripStatusLabel2.Image = imageList1.Images[4];
-                toolStripStatusLabel4.Text = "OK";
-            }
-            else
-            {
-                toolStripStatusLabel2.Image = imageList1.Images[3];
-                toolStripStatusLabel4.Text = "Ajuste a resolução da tela 2 para 1280x720.";
-            }
+            toolStripStatusLabel2.Image = imageList1.Images[4];
+            toolStripStatusLabel4.Text = "OK";
+
+            //if ((bounds.Width == 1280) && (bounds.Height == 720))
+            //{
+            //    toolStripStatusLabel2.Image = imageList1.Images[4];
+            //    toolStripStatusLabel4.Text = "OK";
+            //}
+            //else
+            //{
+            //    toolStripStatusLabel2.Image = imageList1.Images[3];
+            //    toolStripStatusLabel4.Text = "Ajuste a resolução da tela 2 para 1280x720.";
+            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = "Visor " + Application.ProductVersion + " (GIT)";
 
-            //ChecaResolucao(); estou vendo seus arquivos agora kkk
+            ChecaResolucao(); 
 
             trackBar1.Value = Convert.ToInt32(lblVol.Text);            
 
@@ -516,13 +520,22 @@ namespace JWSong
 
                         dlg.Opacity = 1;
 
-                        if (chkZoom.Checked) { AbrirZoom(1); }
+                        // if (chkZoom.Checked) { AbrirZoom(1); }
 
                         dlg.pictureBox1.Visible = false;
                         dlg.axWindowsMediaPlayer1.Visible = true;
 
                         dlg.axWindowsMediaPlayer1.URL = lsv.Items[i].Text;
                         dlg.axWindowsMediaPlayer1.settings.rate = 1;
+
+                        Screen[] screens = Screen.AllScreens;
+
+                        dlg.SetBounds(screens[0].Bounds.X, 0, screens[0].Bounds.Width, screens[0].Bounds.Height);
+
+                        dlg.pictureBox1.Width = screens[0].Bounds.X;
+                        dlg.pictureBox1.Height = screens[0].Bounds.Y;
+
+                        dlg.StartPosition = FormStartPosition.Manual;
 
                         dlg.Show();
 
@@ -956,9 +969,10 @@ namespace JWSong
         }
         
         TimeSpan tsMidia;
-
+        
         private void btTocar_Click_1(object sender, EventArgs e)
         {
+            trackBar1.Value = 100;
             TocarVideo();
         }
         private void TocarVideo()
@@ -990,34 +1004,54 @@ namespace JWSong
 
                 try
                 {
+                    Screen[] screens = Screen.AllScreens;
+
                     dlg.axWindowsMediaPlayer1.Ctlcontrols.stop();
                     dlg.axWindowsMediaPlayer1.Visible = false;
+
+                    dlg.pictureBox1.Image = null;
 
                     dlg.pictureBox1.Visible = true;
                     dlg.pictureBox1.Image = Image.FromFile(lblNomeArq.Text);
 
                     Bitmap bmpOrig = (Bitmap)Image.FromFile(lblNomeArq.Text);
 
-                    dlg.Opacity = 0;
-
-                    dOriginalH = bmpOrig.Height;
                     dOriginalW = bmpOrig.Width;
+                    dOriginalH = bmpOrig.Height;
+
+                    _pbox_W = dlg.Width;
+                    _pbox_H = dlg.Height;
+
+                    dlg.pictureBox1.SetBounds(0, 0, 1280, 720);
+
+                    dlg.Opacity = 0;
 
                     trbZoom.Value = 100;
                     lblZoom.Text = trbZoom.Value + "%";
+                                       
+                    dlg.StartPosition = FormStartPosition.Manual;
+                    dlg.Show();    
 
-                    dlg.pictureBox1.Size = bmpOrig.Size;
+                    double fade_in = 0;
 
-                    dlg.pictureBox1.Top = (dlg.Height / 2) - (bmpOrig.Height / 2); // teste
+                    if (chkFade.Checked)
+                    {
+                        do
+                        {
+                            dlg.Opacity = fade_in;
+                            dlg.Refresh();
 
-                    dlg.pictureBox1.Left = (dlg.Width / 2) - (bmpOrig.Width / 2);
+                            System.Threading.Thread.Sleep(50);
 
-
-                    dlg.Show();
-
-                    dlg.Refresh();
-
-                    SegundaTela();
+                            fade_in += 0.1;
+                        }
+                        while (fade_in < 1);
+                    }
+                    else 
+                    {
+                        dlg.Opacity = 1;
+                        dlg.Refresh();
+                    }
                 }
                 catch (Exception)
                 {
@@ -1118,6 +1152,9 @@ namespace JWSong
 
         private void PararVideo()
         {
+            trackBar1.Value = 100;
+            dlg.pictureBox1.Image = null;
+
             bZoomAtivo = false;
 
             if ((lblStatusVideo.Text == "3") || (lblStatusVideo.Text == "-")) { return;  }
@@ -1143,21 +1180,17 @@ namespace JWSong
                         dlg.Opacity = fade_out;
                         dlg.Refresh();
 
-                        System.Threading.Thread.Sleep(20);
+                        System.Threading.Thread.Sleep(50);
 
                         fade_out -= 0.1;
                     }
                     while (fade_out > 0);
-
                 }
-
-                if (chkZoom.Checked) { AbrirZoom(0); }
 
                 dlg.axWindowsMediaPlayer1.Ctlcontrols.stop();
                 dlg.Hide();
 
                 lblStatusVideo.Text = _PRVW; 
-
             }
             catch (Exception)
             {
@@ -1249,7 +1282,7 @@ namespace JWSong
         {
             Cursor.Show();
 
-            ChecaResolucao();
+            // ChecaResolucao();
         }
 
         private void lsvArquivos_SelectedIndexChanged(object sender, EventArgs e)
@@ -1490,8 +1523,6 @@ namespace JWSong
 
             dlg.pictureBox1.Top -= _pos;
             dlg.Refresh();
-
-            // upload para git 01
         }
 
         private void btnEsq_Click(object sender, EventArgs e)
@@ -1510,16 +1541,30 @@ namespace JWSong
             dlg.Refresh();
         }
 
+        Int64 _pbox_W;
+        Int64 _pbox_H;
+
         private void trbZoom_Scroll(object sender, EventArgs e)
         {
             if (dlg == null) { return; }
-          
-            dZoom = Convert.ToDouble(trbZoom.Value) / 100.0;
 
-            dlg.pictureBox1.Width = Convert.ToInt16(dOriginalW * dZoom);
-            dlg.pictureBox1.Height = Convert.ToInt16(dOriginalH * dZoom);
+            if (trbZoom.Value == 100)
+            {
+                Screen[] screens = Screen.AllScreens;
+
+                dlg.pictureBox1.Top = 0 ;
+                dlg.pictureBox1.Left = 0;
+            }
+            else
+            {
+                dZoom = Convert.ToDouble(trbZoom.Value) / 100.0;
+
+                dlg.pictureBox1.Width = Convert.ToInt16(_pbox_W * dZoom);
+                dlg.pictureBox1.Height = Convert.ToInt16(_pbox_H * dZoom);
+            }
 
             lblZoom.Text = trbZoom.Value + "%";
+            lblZoom.Refresh();
 
             dlg.Refresh();
         }

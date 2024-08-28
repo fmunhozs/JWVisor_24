@@ -88,9 +88,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.trbZoom = new System.Windows.Forms.TrackBar();
             this.lblZoom = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.trbZoom = new System.Windows.Forms.TrackBar();
             this.btnBaixo = new System.Windows.Forms.Button();
             this.btnCima = new System.Windows.Forms.Button();
             this.btnDir = new System.Windows.Forms.Button();
@@ -112,8 +112,6 @@
             this.axwmpPreview = new AxWMPLib.AxWindowsMediaPlayer();
             this.lsvArquivos = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnZoomOut = new System.Windows.Forms.Button();
-            this.btnZoomIn = new System.Windows.Forms.Button();
             this.lblNomeArq = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -121,7 +119,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblVol = new System.Windows.Forms.Label();
             this.lblMidia = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -136,7 +133,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axwmpPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -818,6 +814,24 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // trbZoom
+            // 
+            this.trbZoom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.trbZoom.AutoSize = false;
+            this.trbZoom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.trbZoom.LargeChange = 10;
+            this.trbZoom.Location = new System.Drawing.Point(252, 364);
+            this.trbZoom.Maximum = 500;
+            this.trbZoom.Minimum = 100;
+            this.trbZoom.Name = "trbZoom";
+            this.trbZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trbZoom.Size = new System.Drawing.Size(21, 106);
+            this.trbZoom.SmallChange = 5;
+            this.trbZoom.TabIndex = 85;
+            this.trbZoom.TickFrequency = 5;
+            this.trbZoom.Value = 100;
+            this.trbZoom.Scroll += new System.EventHandler(this.trbZoom_Scroll);
+            // 
             // lblZoom
             // 
             this.lblZoom.AutoSize = true;
@@ -842,25 +856,9 @@
             this.label10.TabIndex = 84;
             this.label10.Text = "Zoom";
             // 
-            // trbZoom
-            // 
-            this.trbZoom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.trbZoom.AutoSize = false;
-            this.trbZoom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.trbZoom.Location = new System.Drawing.Point(252, 347);
-            this.trbZoom.Maximum = 500;
-            this.trbZoom.Minimum = 100;
-            this.trbZoom.Name = "trbZoom";
-            this.trbZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trbZoom.Size = new System.Drawing.Size(21, 123);
-            this.trbZoom.TabIndex = 85;
-            this.trbZoom.TickFrequency = 5;
-            this.trbZoom.Value = 100;
-            this.trbZoom.Scroll += new System.EventHandler(this.trbZoom_Scroll);
-            // 
             // btnBaixo
             // 
-            this.btnBaixo.Image = ((System.Drawing.Image)(resources.GetObject("btnBaixo.Image")));
+            this.btnBaixo.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_1;
             this.btnBaixo.Location = new System.Drawing.Point(407, 332);
             this.btnBaixo.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaixo.Name = "btnBaixo";
@@ -1094,29 +1092,6 @@
             this.columnHeader5.Text = "Título";
             this.columnHeader5.Width = 344;
             // 
-            // btnZoomOut
-            // 
-            this.btnZoomOut.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomOut.Image")));
-            this.btnZoomOut.Location = new System.Drawing.Point(91, 42);
-            this.btnZoomOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnZoomOut.Name = "btnZoomOut";
-            this.btnZoomOut.Size = new System.Drawing.Size(49, 49);
-            this.btnZoomOut.TabIndex = 78;
-            this.btnZoomOut.UseVisualStyleBackColor = true;
-            this.btnZoomOut.Click += new System.EventHandler(this.btnZoomOut_Click);
-            // 
-            // btnZoomIn
-            // 
-            this.btnZoomIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnZoomIn.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomIn.Image")));
-            this.btnZoomIn.Location = new System.Drawing.Point(24, 38);
-            this.btnZoomIn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnZoomIn.Name = "btnZoomIn";
-            this.btnZoomIn.Size = new System.Drawing.Size(49, 49);
-            this.btnZoomIn.TabIndex = 77;
-            this.btnZoomIn.UseVisualStyleBackColor = true;
-            this.btnZoomIn.Click += new System.EventHandler(this.btnZoomIn_Click);
-            // 
             // lblNomeArq
             // 
             this.lblNomeArq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1182,26 +1157,15 @@
             this.lblMidia.TabIndex = 69;
             this.lblMidia.Visible = false;
             // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.btnZoomIn);
-            this.panel7.Controls.Add(this.btnZoomOut);
-            this.panel7.Location = new System.Drawing.Point(632, 312);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(172, 93);
-            this.panel7.TabIndex = 83;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(784, 579);
+            this.ClientSize = new System.Drawing.Size(658, 579);
             this.Controls.Add(this.lblVol);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblMidia);
             this.Controls.Add(this.lblNomeArq);
@@ -1235,7 +1199,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axwmpPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1324,13 +1287,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.Button btnZoomIn;
-        private System.Windows.Forms.Button btnZoomOut;
         private System.Windows.Forms.Button btnDir;
         private System.Windows.Forms.Button btnEsq;
         private System.Windows.Forms.Button btnBaixo;
         private System.Windows.Forms.Button btnCima;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblZoom;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TrackBar trbZoom;
