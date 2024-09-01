@@ -119,6 +119,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblVol = new System.Windows.Forms.Label();
             this.lblMidia = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btReset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -133,6 +135,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axwmpPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -143,7 +146,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(598, 547);
+            this.tabControl1.Size = new System.Drawing.Size(598, 455);
             this.tabControl1.TabIndex = 17;
             // 
             // tabPage1
@@ -179,7 +182,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(590, 521);
+            this.tabPage1.Size = new System.Drawing.Size(590, 429);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cânticos";
             // 
@@ -200,7 +203,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip2.Location = new System.Drawing.Point(3, 496);
+            this.statusStrip2.Location = new System.Drawing.Point(3, 404);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Size = new System.Drawing.Size(584, 22);
             this.statusStrip2.TabIndex = 72;
@@ -268,10 +271,10 @@
             // axwmpVideo
             // 
             this.axwmpVideo.Enabled = true;
-            this.axwmpVideo.Location = new System.Drawing.Point(311, 138);
+            this.axwmpVideo.Location = new System.Drawing.Point(287, 140);
             this.axwmpVideo.Name = "axwmpVideo";
             this.axwmpVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axwmpVideo.OcxState")));
-            this.axwmpVideo.Size = new System.Drawing.Size(265, 200);
+            this.axwmpVideo.Size = new System.Drawing.Size(289, 230);
             this.axwmpVideo.TabIndex = 66;
             // 
             // lblSt
@@ -788,13 +791,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btReset);
+            this.tabPage2.Controls.Add(this.panel7);
             this.tabPage2.Controls.Add(this.trbZoom);
             this.tabPage2.Controls.Add(this.lblZoom);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.btnBaixo);
-            this.tabPage2.Controls.Add(this.btnCima);
-            this.tabPage2.Controls.Add(this.btnDir);
-            this.tabPage2.Controls.Add(this.btnEsq);
             this.tabPage2.Controls.Add(this.chkFade);
             this.tabPage2.Controls.Add(this.statusStrip1);
             this.tabPage2.Controls.Add(this.panel4);
@@ -808,7 +809,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(590, 521);
+            this.tabPage2.Size = new System.Drawing.Size(590, 429);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mídias";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -820,12 +821,12 @@
             this.trbZoom.AutoSize = false;
             this.trbZoom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.trbZoom.LargeChange = 10;
-            this.trbZoom.Location = new System.Drawing.Point(252, 364);
+            this.trbZoom.Location = new System.Drawing.Point(258, 290);
             this.trbZoom.Maximum = 500;
             this.trbZoom.Minimum = 100;
             this.trbZoom.Name = "trbZoom";
             this.trbZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trbZoom.Size = new System.Drawing.Size(21, 106);
+            this.trbZoom.Size = new System.Drawing.Size(32, 104);
             this.trbZoom.SmallChange = 5;
             this.trbZoom.TabIndex = 85;
             this.trbZoom.TickFrequency = 5;
@@ -836,11 +837,11 @@
             // 
             this.lblZoom.AutoSize = true;
             this.lblZoom.BackColor = System.Drawing.Color.Transparent;
-            this.lblZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZoom.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblZoom.Location = new System.Drawing.Point(308, 324);
+            this.lblZoom.Location = new System.Drawing.Point(296, 314);
             this.lblZoom.Name = "lblZoom";
-            this.lblZoom.Size = new System.Drawing.Size(54, 20);
+            this.lblZoom.Size = new System.Drawing.Size(44, 16);
             this.lblZoom.TabIndex = 86;
             this.lblZoom.Text = "100%";
             // 
@@ -848,32 +849,32 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label10.Location = new System.Drawing.Point(248, 324);
+            this.label10.Location = new System.Drawing.Point(296, 298);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 20);
+            this.label10.Size = new System.Drawing.Size(46, 16);
             this.label10.TabIndex = 84;
             this.label10.Text = "Zoom";
             // 
             // btnBaixo
             // 
             this.btnBaixo.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_1;
-            this.btnBaixo.Location = new System.Drawing.Point(407, 332);
+            this.btnBaixo.Location = new System.Drawing.Point(35, 69);
             this.btnBaixo.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaixo.Name = "btnBaixo";
-            this.btnBaixo.Size = new System.Drawing.Size(40, 40);
+            this.btnBaixo.Size = new System.Drawing.Size(35, 35);
             this.btnBaixo.TabIndex = 82;
             this.btnBaixo.UseVisualStyleBackColor = true;
             this.btnBaixo.Click += new System.EventHandler(this.btnBaixo_Click);
             // 
             // btnCima
             // 
-            this.btnCima.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_1;
-            this.btnCima.Location = new System.Drawing.Point(407, 407);
+            this.btnCima.Image = ((System.Drawing.Image)(resources.GetObject("btnCima.Image")));
+            this.btnCima.Location = new System.Drawing.Point(34, 2);
             this.btnCima.Margin = new System.Windows.Forms.Padding(2);
             this.btnCima.Name = "btnCima";
-            this.btnCima.Size = new System.Drawing.Size(40, 40);
+            this.btnCima.Size = new System.Drawing.Size(35, 35);
             this.btnCima.TabIndex = 81;
             this.btnCima.UseVisualStyleBackColor = true;
             this.btnCima.Click += new System.EventHandler(this.btnCima_Click);
@@ -881,10 +882,10 @@
             // btnDir
             // 
             this.btnDir.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_;
-            this.btnDir.Location = new System.Drawing.Point(370, 369);
+            this.btnDir.Location = new System.Drawing.Point(69, 36);
             this.btnDir.Margin = new System.Windows.Forms.Padding(2);
             this.btnDir.Name = "btnDir";
-            this.btnDir.Size = new System.Drawing.Size(40, 40);
+            this.btnDir.Size = new System.Drawing.Size(35, 35);
             this.btnDir.TabIndex = 80;
             this.btnDir.UseVisualStyleBackColor = true;
             this.btnDir.Click += new System.EventHandler(this.btnDir_Click);
@@ -892,10 +893,10 @@
             // btnEsq
             // 
             this.btnEsq.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_2;
-            this.btnEsq.Location = new System.Drawing.Point(444, 369);
+            this.btnEsq.Location = new System.Drawing.Point(2, 36);
             this.btnEsq.Margin = new System.Windows.Forms.Padding(2);
             this.btnEsq.Name = "btnEsq";
-            this.btnEsq.Size = new System.Drawing.Size(40, 40);
+            this.btnEsq.Size = new System.Drawing.Size(35, 35);
             this.btnEsq.TabIndex = 79;
             this.btnEsq.UseVisualStyleBackColor = true;
             this.btnEsq.Click += new System.EventHandler(this.btnEsq_Click);
@@ -923,7 +924,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tssMidia});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 496);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 404);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(584, 22);
             this.statusStrip1.TabIndex = 75;
@@ -947,19 +948,19 @@
             this.panel4.Controls.Add(this.lblTTotal);
             this.panel4.Controls.Add(this.lblStatusVideo);
             this.panel4.Controls.Add(this.lblTCorrente);
-            this.panel4.Location = new System.Drawing.Point(262, 249);
+            this.panel4.Location = new System.Drawing.Point(260, 231);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(164, 51);
+            this.panel4.Size = new System.Drawing.Size(170, 44);
             this.panel4.TabIndex = 73;
             // 
             // lblTTotal
             // 
             this.lblTTotal.AutoSize = true;
-            this.lblTTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTTotal.ForeColor = System.Drawing.Color.GreenYellow;
-            this.lblTTotal.Location = new System.Drawing.Point(91, 31);
+            this.lblTTotal.Location = new System.Drawing.Point(91, 29);
             this.lblTTotal.Name = "lblTTotal";
-            this.lblTTotal.Size = new System.Drawing.Size(57, 16);
+            this.lblTTotal.Size = new System.Drawing.Size(49, 14);
             this.lblTTotal.TabIndex = 73;
             this.lblTTotal.Text = "00:00:00";
             this.lblTTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -970,7 +971,7 @@
             this.lblStatusVideo.BackColor = System.Drawing.Color.DarkBlue;
             this.lblStatusVideo.Font = new System.Drawing.Font("Guifx v2 Transports", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusVideo.ForeColor = System.Drawing.Color.GreenYellow;
-            this.lblStatusVideo.Location = new System.Drawing.Point(7, 12);
+            this.lblStatusVideo.Location = new System.Drawing.Point(1, 5);
             this.lblStatusVideo.Name = "lblStatusVideo";
             this.lblStatusVideo.Size = new System.Drawing.Size(29, 23);
             this.lblStatusVideo.TabIndex = 75;
@@ -981,7 +982,7 @@
             this.lblTCorrente.AutoSize = true;
             this.lblTCorrente.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTCorrente.ForeColor = System.Drawing.Color.GreenYellow;
-            this.lblTCorrente.Location = new System.Drawing.Point(31, 0);
+            this.lblTCorrente.Location = new System.Drawing.Point(30, -3);
             this.lblTCorrente.Name = "lblTCorrente";
             this.lblTCorrente.Size = new System.Drawing.Size(127, 33);
             this.lblTCorrente.TabIndex = 74;
@@ -991,9 +992,9 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(255, 240);
+            this.panel5.Location = new System.Drawing.Point(255, 225);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(181, 67);
+            this.panel5.Size = new System.Drawing.Size(181, 56);
             this.panel5.TabIndex = 74;
             // 
             // label5
@@ -1014,7 +1015,7 @@
             this.trvPastas.Location = new System.Drawing.Point(9, 15);
             this.trvPastas.Margin = new System.Windows.Forms.Padding(2);
             this.trvPastas.Name = "trvPastas";
-            this.trvPastas.Size = new System.Drawing.Size(221, 212);
+            this.trvPastas.Size = new System.Drawing.Size(221, 183);
             this.trvPastas.TabIndex = 9;
             this.trvPastas.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.trvPastas_BeforeExpand);
             this.trvPastas.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.trvPastas_BeforeExpand);
@@ -1027,9 +1028,9 @@
             this.btParar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btParar.ImageIndex = 2;
             this.btParar.ImageList = this.imageList1;
-            this.btParar.Location = new System.Drawing.Point(516, 240);
+            this.btParar.Location = new System.Drawing.Point(522, 225);
             this.btParar.Name = "btParar";
-            this.btParar.Size = new System.Drawing.Size(62, 67);
+            this.btParar.Size = new System.Drawing.Size(56, 56);
             this.btParar.TabIndex = 12;
             this.btParar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btParar.UseVisualStyleBackColor = true;
@@ -1050,9 +1051,9 @@
             this.btTocar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTocar.ImageIndex = 0;
             this.btTocar.ImageList = this.imageList1;
-            this.btTocar.Location = new System.Drawing.Point(444, 240);
+            this.btTocar.Location = new System.Drawing.Point(454, 225);
             this.btTocar.Name = "btTocar";
-            this.btTocar.Size = new System.Drawing.Size(62, 67);
+            this.btTocar.Size = new System.Drawing.Size(56, 56);
             this.btTocar.TabIndex = 11;
             this.btTocar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btTocar.UseVisualStyleBackColor = true;
@@ -1064,7 +1065,7 @@
             this.axwmpPreview.Location = new System.Drawing.Point(252, 14);
             this.axwmpPreview.Name = "axwmpPreview";
             this.axwmpPreview.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axwmpPreview.OcxState")));
-            this.axwmpPreview.Size = new System.Drawing.Size(326, 215);
+            this.axwmpPreview.Size = new System.Drawing.Size(326, 203);
             this.axwmpPreview.TabIndex = 4;
             this.axwmpPreview.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axwmpPreview_PlayStateChange);
             // 
@@ -1077,10 +1078,10 @@
             this.lsvArquivos.FullRowSelect = true;
             this.lsvArquivos.GridLines = true;
             this.lsvArquivos.HideSelection = false;
-            this.lsvArquivos.Location = new System.Drawing.Point(9, 240);
+            this.lsvArquivos.Location = new System.Drawing.Point(9, 213);
             this.lsvArquivos.Margin = new System.Windows.Forms.Padding(2);
             this.lsvArquivos.Name = "lsvArquivos";
-            this.lsvArquivos.Size = new System.Drawing.Size(221, 209);
+            this.lsvArquivos.Size = new System.Drawing.Size(221, 181);
             this.lsvArquivos.TabIndex = 10;
             this.lsvArquivos.UseCompatibleStateImageBehavior = false;
             this.lsvArquivos.View = System.Windows.Forms.View.Details;
@@ -1157,12 +1158,40 @@
             this.lblMidia.TabIndex = 69;
             this.lblMidia.Visible = false;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.btnCima);
+            this.panel7.Controls.Add(this.btnDir);
+            this.panel7.Controls.Add(this.btnEsq);
+            this.panel7.Controls.Add(this.btnBaixo);
+            this.panel7.Location = new System.Drawing.Point(464, 287);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(110, 110);
+            this.panel7.TabIndex = 87;
+            // 
+            // btReset
+            // 
+            this.btReset.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btReset.FlatAppearance.BorderSize = 3;
+            this.btReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btReset.Location = new System.Drawing.Point(340, 346);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(90, 32);
+            this.btReset.TabIndex = 88;
+            this.btReset.Text = "RESET";
+            this.btReset.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(658, 579);
+            this.ClientSize = new System.Drawing.Size(625, 479);
             this.Controls.Add(this.lblVol);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.trackBar1);
@@ -1199,6 +1228,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axwmpPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1294,6 +1324,8 @@
         private System.Windows.Forms.Label lblZoom;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TrackBar trbZoom;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btReset;
     }
 }
 
