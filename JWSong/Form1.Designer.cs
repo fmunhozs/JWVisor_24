@@ -819,14 +819,14 @@
             // 
             this.trbZoom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.trbZoom.AutoSize = false;
-            this.trbZoom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.trbZoom.BackColor = System.Drawing.Color.CornflowerBlue;
             this.trbZoom.LargeChange = 10;
-            this.trbZoom.Location = new System.Drawing.Point(258, 290);
+            this.trbZoom.Location = new System.Drawing.Point(255, 290);
             this.trbZoom.Maximum = 500;
             this.trbZoom.Minimum = 100;
             this.trbZoom.Name = "trbZoom";
             this.trbZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trbZoom.Size = new System.Drawing.Size(32, 104);
+            this.trbZoom.Size = new System.Drawing.Size(24, 104);
             this.trbZoom.SmallChange = 5;
             this.trbZoom.TabIndex = 85;
             this.trbZoom.TickFrequency = 5;
@@ -859,7 +859,7 @@
             // 
             // btnBaixo
             // 
-            this.btnBaixo.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_1;
+            this.btnBaixo.Image = ((System.Drawing.Image)(resources.GetObject("btnBaixo.Image")));
             this.btnBaixo.Location = new System.Drawing.Point(35, 69);
             this.btnBaixo.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaixo.Name = "btnBaixo";
@@ -881,7 +881,7 @@
             // 
             // btnDir
             // 
-            this.btnDir.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_;
+            this.btnDir.Image = ((System.Drawing.Image)(resources.GetObject("btnDir.Image")));
             this.btnDir.Location = new System.Drawing.Point(69, 36);
             this.btnDir.Margin = new System.Windows.Forms.Padding(2);
             this.btnDir.Name = "btnDir";
@@ -892,7 +892,7 @@
             // 
             // btnEsq
             // 
-            this.btnEsq.Image = global::Visor.Properties.Resources.circulo_de_flecha__1_2;
+            this.btnEsq.Image = ((System.Drawing.Image)(resources.GetObject("btnEsq.Image")));
             this.btnEsq.Location = new System.Drawing.Point(2, 36);
             this.btnEsq.Margin = new System.Windows.Forms.Padding(2);
             this.btnEsq.Name = "btnEsq";
@@ -1174,12 +1174,12 @@
             // btReset
             // 
             this.btReset.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btReset.FlatAppearance.BorderSize = 3;
             this.btReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btReset.Location = new System.Drawing.Point(340, 346);
+            this.btReset.Location = new System.Drawing.Point(332, 346);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(90, 32);
             this.btReset.TabIndex = 88;
