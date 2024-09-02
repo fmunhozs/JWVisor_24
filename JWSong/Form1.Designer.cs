@@ -88,13 +88,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.trbZoom = new System.Windows.Forms.TrackBar();
-            this.lblZoom = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnBaixo = new System.Windows.Forms.Button();
+            this.btReset = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.btnCima = new System.Windows.Forms.Button();
             this.btnDir = new System.Windows.Forms.Button();
             this.btnEsq = new System.Windows.Forms.Button();
+            this.btnBaixo = new System.Windows.Forms.Button();
+            this.trbZoom = new System.Windows.Forms.TrackBar();
+            this.lblZoom = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.chkFade = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -119,8 +121,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblVol = new System.Windows.Forms.Label();
             this.lblMidia = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btReset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
@@ -130,12 +130,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbZoom)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axwmpPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -815,6 +815,79 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // btReset
+            // 
+            this.btReset.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btReset.FlatAppearance.BorderSize = 3;
+            this.btReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btReset.Location = new System.Drawing.Point(332, 346);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(90, 32);
+            this.btReset.TabIndex = 88;
+            this.btReset.Text = "RESET";
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.btnCima);
+            this.panel7.Controls.Add(this.btnDir);
+            this.panel7.Controls.Add(this.btnEsq);
+            this.panel7.Controls.Add(this.btnBaixo);
+            this.panel7.Location = new System.Drawing.Point(464, 287);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(110, 110);
+            this.panel7.TabIndex = 87;
+            // 
+            // btnCima
+            // 
+            this.btnCima.Image = ((System.Drawing.Image)(resources.GetObject("btnCima.Image")));
+            this.btnCima.Location = new System.Drawing.Point(34, 2);
+            this.btnCima.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCima.Name = "btnCima";
+            this.btnCima.Size = new System.Drawing.Size(35, 35);
+            this.btnCima.TabIndex = 81;
+            this.btnCima.UseVisualStyleBackColor = true;
+            this.btnCima.Click += new System.EventHandler(this.btnCima_Click);
+            // 
+            // btnDir
+            // 
+            this.btnDir.Image = ((System.Drawing.Image)(resources.GetObject("btnDir.Image")));
+            this.btnDir.Location = new System.Drawing.Point(69, 36);
+            this.btnDir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDir.Name = "btnDir";
+            this.btnDir.Size = new System.Drawing.Size(35, 35);
+            this.btnDir.TabIndex = 80;
+            this.btnDir.UseVisualStyleBackColor = true;
+            this.btnDir.Click += new System.EventHandler(this.btnDir_Click);
+            // 
+            // btnEsq
+            // 
+            this.btnEsq.Image = ((System.Drawing.Image)(resources.GetObject("btnEsq.Image")));
+            this.btnEsq.Location = new System.Drawing.Point(2, 36);
+            this.btnEsq.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEsq.Name = "btnEsq";
+            this.btnEsq.Size = new System.Drawing.Size(35, 35);
+            this.btnEsq.TabIndex = 79;
+            this.btnEsq.UseVisualStyleBackColor = true;
+            this.btnEsq.Click += new System.EventHandler(this.btnEsq_Click);
+            // 
+            // btnBaixo
+            // 
+            this.btnBaixo.Image = ((System.Drawing.Image)(resources.GetObject("btnBaixo.Image")));
+            this.btnBaixo.Location = new System.Drawing.Point(35, 69);
+            this.btnBaixo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBaixo.Name = "btnBaixo";
+            this.btnBaixo.Size = new System.Drawing.Size(35, 35);
+            this.btnBaixo.TabIndex = 82;
+            this.btnBaixo.UseVisualStyleBackColor = true;
+            this.btnBaixo.Click += new System.EventHandler(this.btnBaixo_Click);
+            // 
             // trbZoom
             // 
             this.trbZoom.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -856,50 +929,6 @@
             this.label10.Size = new System.Drawing.Size(46, 16);
             this.label10.TabIndex = 84;
             this.label10.Text = "Zoom";
-            // 
-            // btnBaixo
-            // 
-            this.btnBaixo.Image = ((System.Drawing.Image)(resources.GetObject("btnBaixo.Image")));
-            this.btnBaixo.Location = new System.Drawing.Point(35, 69);
-            this.btnBaixo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBaixo.Name = "btnBaixo";
-            this.btnBaixo.Size = new System.Drawing.Size(35, 35);
-            this.btnBaixo.TabIndex = 82;
-            this.btnBaixo.UseVisualStyleBackColor = true;
-            this.btnBaixo.Click += new System.EventHandler(this.btnBaixo_Click);
-            // 
-            // btnCima
-            // 
-            this.btnCima.Image = ((System.Drawing.Image)(resources.GetObject("btnCima.Image")));
-            this.btnCima.Location = new System.Drawing.Point(34, 2);
-            this.btnCima.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCima.Name = "btnCima";
-            this.btnCima.Size = new System.Drawing.Size(35, 35);
-            this.btnCima.TabIndex = 81;
-            this.btnCima.UseVisualStyleBackColor = true;
-            this.btnCima.Click += new System.EventHandler(this.btnCima_Click);
-            // 
-            // btnDir
-            // 
-            this.btnDir.Image = ((System.Drawing.Image)(resources.GetObject("btnDir.Image")));
-            this.btnDir.Location = new System.Drawing.Point(69, 36);
-            this.btnDir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDir.Name = "btnDir";
-            this.btnDir.Size = new System.Drawing.Size(35, 35);
-            this.btnDir.TabIndex = 80;
-            this.btnDir.UseVisualStyleBackColor = true;
-            this.btnDir.Click += new System.EventHandler(this.btnDir_Click);
-            // 
-            // btnEsq
-            // 
-            this.btnEsq.Image = ((System.Drawing.Image)(resources.GetObject("btnEsq.Image")));
-            this.btnEsq.Location = new System.Drawing.Point(2, 36);
-            this.btnEsq.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEsq.Name = "btnEsq";
-            this.btnEsq.Size = new System.Drawing.Size(35, 35);
-            this.btnEsq.TabIndex = 79;
-            this.btnEsq.UseVisualStyleBackColor = true;
-            this.btnEsq.Click += new System.EventHandler(this.btnEsq_Click);
             // 
             // chkFade
             // 
@@ -1158,34 +1187,6 @@
             this.lblMidia.TabIndex = 69;
             this.lblMidia.Visible = false;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.btnCima);
-            this.panel7.Controls.Add(this.btnDir);
-            this.panel7.Controls.Add(this.btnEsq);
-            this.panel7.Controls.Add(this.btnBaixo);
-            this.panel7.Location = new System.Drawing.Point(464, 287);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(110, 110);
-            this.panel7.TabIndex = 87;
-            // 
-            // btReset
-            // 
-            this.btReset.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btReset.FlatAppearance.BorderSize = 3;
-            this.btReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btReset.Location = new System.Drawing.Point(332, 346);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(90, 32);
-            this.btReset.TabIndex = 88;
-            this.btReset.Text = "RESET";
-            this.btReset.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1208,6 +1209,8 @@
             this.Text = "Visor (GIT)";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown_1);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1221,6 +1224,7 @@
             this.panel2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trbZoom)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1228,7 +1232,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axwmpPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

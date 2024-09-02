@@ -49,33 +49,18 @@ namespace JWSong
             TreeNode rootNode;
 
             // DIRETÓRIO PRINCIPAL
-            DirectoryInfo info = new DirectoryInfo(@"C:\JWMidias");
+            DirectoryInfo info = new DirectoryInfo(@"C:\");
+
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
                 rootNode.Tag = info;
-                // rootNode.ImageIndex = 0;
                 GetDirectories(info.GetDirectories(), rootNode);
                 trvPastas.Nodes.Add(rootNode);
             }
 
-            // DIRETÓRIO JW LIBRARY (DEFAULT)
-            //DirectoryInfo info2 = new DirectoryInfo(ptMD.Replace("\\\\","\\"));
-
-            //if ((info2.Exists) && (info2.FullName !="Visor"))
-
-            //{
-            //    rootNode = new TreeNode(info2.Name);
-            //    rootNode.Tag = info2;
-            //    // rootNode.ImageIndex = 0;
-            //    GetDirectories(info2.GetDirectories(), rootNode);
-            //    trvPastas.Nodes.Add(rootNode);
-            //}
-
-
             // UNIDADES REMOVÍVEIS
             DirectoryInfo info3;
-
             try
             {
                 foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -104,24 +89,30 @@ namespace JWSong
 
             foreach (DirectoryInfo subDir in subDirs)
             {
-                try
+
+                if (subDir.Name.ToString().IndexOf("JW") >= 0)
                 {
-                    aNode = new TreeNode(subDir.Name, 0, 0);
-                    aNode.Tag = subDir;
-                    aNode.ImageKey = "folder";
-                    subSubDirs = subDir.GetDirectories();
-                    if (subSubDirs.Length != 0)
+                    try
                     {
-                        GetDirectories(subSubDirs, aNode);
+                        aNode = new TreeNode(subDir.Name, 0, 0);
+                        aNode.Tag = subDir;
+                        aNode.ImageKey = "folder";
+                        subSubDirs = subDir.GetDirectories();
+                        if (subSubDirs.Length != 0)
+                        {
+                            GetDirectories(subSubDirs, aNode);
+                        }
+                        nodeToAddTo.Nodes.Add(aNode);
                     }
-                    nodeToAddTo.Nodes.Add(aNode);
+                    catch (Exception)
+                    {
+                        // MessageBox.Show("Erro ao tentar abrir diretório.", "JW Visor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception)
-                {
-                    // MessageBox.Show("Erro ao tentar abrir diretório.", "JW Visor", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
             }
         }
+
 
         int iTela = 0;
         
@@ -855,7 +846,7 @@ namespace JWSong
 
                         if (trvPastas.SelectedNode.FullPath.IndexOf("JWMidias") >= 0)
                         {
-                            NomeDoArquivo = @"C:\" + trvPastas.SelectedNode.FullPath + @"\" + lsvArquivos.SelectedItems[0].Text;
+                            NomeDoArquivo = trvPastas.SelectedNode.FullPath + @"\" + lsvArquivos.SelectedItems[0].Text;
                         }
                         else
                         {
@@ -1044,6 +1035,8 @@ namespace JWSong
                         dlg.Opacity = 1;
                         dlg.Refresh();
                     }
+
+                    this.Focus();
                 }
                 catch (Exception)
                 {
@@ -1267,8 +1260,6 @@ namespace JWSong
         private void Form1_Activated(object sender, EventArgs e)
         {
             Cursor.Show();
-
-            // ChecaResolucao();
         }
 
         private void lsvArquivos_SelectedIndexChanged(object sender, EventArgs e)
@@ -1528,6 +1519,96 @@ namespace JWSong
         }
 
         Int64 _pbox_W;
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            trbZoom.Value = 100;
+            lblZoom.Text = trbZoom.Value.ToString();
+
+            dlg.pictureBox1.SetBounds(0, 0, 1280, 720);
+            dlg.Refresh();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Não usar.
+        }
+
+        private void Form1_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (dlg == null) { return; }
+
+            switch (e.KeyCode)
+            {
+                case Keys.NumPad2:
+                    dlg.pictureBox1.Top += _pos;
+                    break;
+
+                case Keys.NumPad8:
+                    dlg.pictureBox1.Top -= _pos;
+                    break;
+
+                case Keys.NumPad4:
+                    dlg.pictureBox1.Left += _pos;
+                    break;
+
+                case Keys.NumPad6:
+                    dlg.pictureBox1.Left -= _pos;
+                    break;
+
+                case Keys.Z:
+                    if (trbZoom.Value + 10 > 500) { return; }
+
+                    trbZoom.Value += 10; 
+                    lblZoom.Text = trbZoom.Value.ToString();
+
+                    if (trbZoom.Value == 100)
+                    {
+                        dlg.pictureBox1.Top = 0;
+                        dlg.pictureBox1.Left = 0;
+                    }
+                    else
+                    {
+                        dZoom = Convert.ToDouble(trbZoom.Value) / 100.0;
+
+                        dlg.pictureBox1.Width = Convert.ToInt16(_pbox_W * dZoom);
+                        dlg.pictureBox1.Height = Convert.ToInt16(_pbox_H * dZoom);
+                    }
+
+                    lblZoom.Text = trbZoom.Value.ToString() + "%";
+                    lblZoom.Refresh();
+
+                    break;
+
+                case Keys.X:
+                    if (trbZoom.Value - 10 < 100) { return; }
+
+                    trbZoom.Value -= 10;
+                    lblZoom.Text = trbZoom.Value.ToString();
+
+                    if (trbZoom.Value == 100)
+                    {
+                        dlg.pictureBox1.Top = 0;
+                        dlg.pictureBox1.Left = 0;
+                    }
+                    else
+                    {
+                        dZoom = Convert.ToDouble(trbZoom.Value) / 100.0;
+
+                        dlg.pictureBox1.Width = Convert.ToInt16(_pbox_W * dZoom);
+                        dlg.pictureBox1.Height = Convert.ToInt16(_pbox_H * dZoom);
+                    }
+
+                    lblZoom.Text = trbZoom.Value.ToString() + "%";
+                    lblZoom.Refresh();
+
+                    break;
+            }
+
+            dlg.Refresh();
+
+        }
+
         Int64 _pbox_H;
 
         private void trbZoom_Scroll(object sender, EventArgs e)
@@ -1549,7 +1630,7 @@ namespace JWSong
                 dlg.pictureBox1.Height = Convert.ToInt16(_pbox_H * dZoom);
             }
 
-            lblZoom.Text = trbZoom.Value + "%";
+            lblZoom.Text = trbZoom.Value.ToString() + "%";
             lblZoom.Refresh();
 
             dlg.Refresh();
